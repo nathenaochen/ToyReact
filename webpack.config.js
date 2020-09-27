@@ -1,0 +1,26 @@
+var webpackConfig = {
+  entry: './testsrc/index.js',
+  mode: 'development',
+  module:{
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: [['@babel/plugin-transform-react-jsx',{pa}]]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  optimization:{
+    minimize: false
+  }
+
+}
+
+module.exports = webpackConfig
